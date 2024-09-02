@@ -1,15 +1,16 @@
-package com.photography.entity;
+package com.photography.lithuanian_prees_photography.entity;
 
-import com.photography.enums.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.photography.lithuanian_prees_photography.enums.Role;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.ZonedDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
@@ -24,15 +25,37 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-
     private String firstName;
     private String lastName;
     private String email;
-
-    private String password;
-
     @Enumerated(EnumType.STRING)
     private Role role;
+    @JsonIgnore
+    private String password;
+    private Integer birthYear;
+    private String phoneNumber;
+    private Boolean isFreelance;
+    private String institution;
+    private boolean customLimits;
+    private Integer maxTotal;
+    private Integer maxSinglePhotos;
+    private Integer maxCollections;
+    private Boolean isEnabled;
+    private Boolean isNonLocked;
+    @CreatedDate
+    private ZonedDateTime createdAt;
+    @LastModifiedDate
+    private ZonedDateTime modifiedAt;
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = ZonedDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.modifiedAt = ZonedDateTime.now();
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

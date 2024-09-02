@@ -1,4 +1,4 @@
-package com.photography.config;
+package com.photography.lithuanian_prees_photography.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

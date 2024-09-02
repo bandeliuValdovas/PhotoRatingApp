@@ -1,8 +1,9 @@
-package com.photography.config;
+package com.photography.lithuanian_prees_photography.config;
 
 
 
-import com.photography.repository.UserRepository;
+import com.photography.lithuanian_prees_photography.repository.UserRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +24,7 @@ public class AppConfig {
     @Bean
     public UserDetailsService userDetailsService(){
         return username -> userRepository.findByEmail(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
     }
 
     @Bean

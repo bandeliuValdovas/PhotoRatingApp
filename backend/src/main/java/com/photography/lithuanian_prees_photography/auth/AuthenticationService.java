@@ -5,11 +5,11 @@ import com.photography.lithuanian_prees_photography.entity.User;
 import com.photography.lithuanian_prees_photography.enums.Role;
 import com.photography.lithuanian_prees_photography.repository.UserRepository;
 import jakarta.persistence.EntityExistsException;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -35,13 +35,13 @@ public class AuthenticationService {
         repository.save(user);
         return RegisterResponse
                 .builder()
-                .name(user.getFirstName())
+                .user(user)
                 .build();
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
         var user = repository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new UsernameNotFoundException("user not found"));
+                .orElseThrow(() -> new EntityNotFoundException("user not found"));
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 request.getEmail(),
                 request.getPassword())

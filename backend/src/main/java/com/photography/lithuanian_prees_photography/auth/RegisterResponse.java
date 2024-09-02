@@ -1,5 +1,6 @@
 package com.photography.lithuanian_prees_photography.auth;
 
+import com.photography.lithuanian_prees_photography.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,5 +11,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RegisterResponse {
-    private String name;
+    private User user;
 }
