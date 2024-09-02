@@ -1,4 +1,4 @@
-package com.photography.lithuanian_prees_photography;
+package com.photography;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,8 +1,8 @@
-package com.photography.lithuanian_prees_photography.config;
+package com.photography.config;
 
 
 
-import com.photography.lithuanian_prees_photography.repository.UserRepository;
+import com.photography.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

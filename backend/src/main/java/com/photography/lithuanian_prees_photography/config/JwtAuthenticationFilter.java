@@ -1,4 +1,4 @@
-package com.photography.lithuanian_prees_photography.config;
+package com.photography.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

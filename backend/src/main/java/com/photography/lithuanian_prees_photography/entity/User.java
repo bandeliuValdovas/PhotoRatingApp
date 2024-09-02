@@ -1,6 +1,6 @@
-package com.photography.lithuanian_prees_photography.entity;
+package com.photography.entity;
 
-import com.photography.lithuanian_prees_photography.enums.Role;
+import com.photography.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
