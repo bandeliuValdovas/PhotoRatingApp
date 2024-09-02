@@ -1,3 +1,16 @@
 spring:
   application:
-    name: lithuanian-prees-photography
+    name: lithuanian-press-photography
+  datasource:
+    url: jdbc:h2:mem:mydb
+    driverClassName: org.h2.Driver
+    username:
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console.enabled: true
+app:
+  constants:
+    security:
+      jwt-secret-key: 358baa9cd28d0202e94c97a1812a41fffaab099ff27a6a0050bcefed38866154

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.photography</groupId>
-	<artifactId>lithuanian-prees-photography</artifactId>
+	<artifactId>lithuanian-press-photography</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>lithuanian-prees-photography</name>
+	<name>lithuanian-press-photography</name>
 	<description>App for placing and rating photos</description>
 	<url/>
 	<licenses>
@@ -66,6 +66,21 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.12.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.12.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.12.5</version>
 		</dependency>
 	</dependencies>
 
